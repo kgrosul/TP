@@ -10,6 +10,6 @@ do
 find $HOME -iname "*.$fileType" -exec cp {} ./$finDir/ \; &> /dev/null
 done
 
-tar -cf "$finArch.tar" $finDir
+tar -cf "$finArch.tar" $finDir  &> /dev/null
 
 echo "done"
