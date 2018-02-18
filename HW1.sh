@@ -2,11 +2,12 @@
 
 finDir=$1
 finArch=$2
-mkdir $finDir
+
+mkdir $finDir &> /dev/null
 
 for fileType in $@
 do
-find $HOME -iname "*.$fileType" -exec cp {} ./$finDir/ \;
+find $HOME -iname "*.$fileType" -exec cp {} ./$finDir/ \; &> /dev/null
 done
 
 tar -cf "$finArch.tar" $finDir
