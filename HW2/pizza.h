@@ -20,7 +20,10 @@ public:
     void setIngredients(const std::vector<std::string> &i);
     void cook(int time);
     void setPrice(int money);
-    void show();
+    std::string showDough() const;
+    std::vector<std::string> showIngredients() const;
+    std::vector<std::string> showSauces() const;
+    int showPrice() const;
 
 };
 

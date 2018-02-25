@@ -6,17 +6,10 @@ void CPizza::setIngredients(const std::vector<std::string> &i){ ingredients = i;
 void CPizza::cook(int time){ std::cout << "сook " <<
                                        time << " seconds." << std::endl; }
 void CPizza::setPrice(int money){ price = money; }
-void CPizza::show(){
-    std::cout << "Dough: " << dough << "\n"
-              << "Ingredients: ";
-    for(auto ing : ingredients)
-        std::cout << ing << " ";
-    std::cout << "\n" << "Sauces: ";
-    for(auto s : sauces)
-        std::cout << s << " ";
-    std::cout << "\n" << "Price: " << price << std::endl;
-};
-
+std::string CPizza::showDough() const { return dough; }
+std::vector<std::string> CPizza::showIngredients() const { return  ingredients; }
+std::vector<std::string> CPizza::showSauces() const { return  sauces; }
+int CPizza::showPrice() const { return price; }
 
 
 std::shared_ptr<CPizza> IPizzaBuilder::getPizza() { return pizza; }
@@ -56,7 +49,7 @@ void CHawaiianPizzaBuilder::setPrice(){ pizza->setPrice(399); }
 
 
 void CCustomPizzaBuilder::chooseDough(){
-    std::cout << "choose dough for custom pizza:\n thick, medium or thin";
+    std::cout << "choose dough for custom pizza:\nthick, medium or thin" << std::endl;
     std::string dough;
     std::cin >> dough;
     pizza->setDough(dough);
@@ -83,11 +76,9 @@ void CCustomPizzaBuilder::addSauces() {
     int number;
     std::cin >> number;
     std::cout << "write sauces" << std::endl;
-    std::vector<std::string> sauces;
+    std::vector<std::string> sauces(number);
     for (int i = 0; i < number; ++i) {
-        std::string sc;
-        std::cin >> sc;
-        sauces.push_back(sc);
+        std::cin >> sauces[i];
     }
     pizza->setSauces(sauces);
 }

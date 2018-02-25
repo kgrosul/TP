@@ -1,9 +1,7 @@
-#include "pizza.h"
-#include "otherfood.h"
-#include "makepizza.h"
-#include "otherfood.h"
+
 #include "run.h"
-int main() {
+
+int main(){
     run();
     return 0;
 }
