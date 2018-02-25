@@ -1,0 +1,36 @@
+Для того, чтобы как можно быстрее начать получать прибыль хозяин пиццерии решает открыть её одновременно в двух столицах -
+в Москве и в Петербурге. Однако поскольку денег у него осталось совсем чуть-чуть решено было сосредоточиться именно на пицце - 
+именно тут применятся Builder, посетитель может выбрать одну из готовы или сделать свою. Последние исследования показали, 
+что большинство посетителей пиццерий в Москве предпочитают кофе, салат Цезарь и сендвичи с сыром, а в Петербурге - чай, 
+салат Бостон и сендвичи с рыбой. Для сокращения издержек было решено предлагать только данные доп. товары(для каждого города
+- свои, здесь и используется Абстрактная фабрика.
+
+Обычный заказ выглядит так:
+- choose city: Msk or Sbp
+[введите город в данном формате]
+- write number or pizzas
+[введите количество пицц, которое хотите заказать]
+- choose pizzas: Hawaiian, Margarita, 4Cheeses or Custom
+[введите названия через Enter]
+- write number or drinks
+[введите количество напитков]
+- write number or salads
+[введите количество салатов]
+- write number or sandwiches
+[введите количество сендвичей]
+Если была заказана кастомная пицца:
+- choose dough for custom pizza:
+- thick, medium or thin
+[введите тип теста в данном формате]
+choose ingredients for custom pizza:
+- Chicken, Ham, Tomatoes, Cheese, Pineapples, Basil
+- Mozzarella, Emmental, Gorgonzola, Oregano, Olive oil, Onion, Wine, Mushrooms, Pumpkin
+- write number of ingredients
+[введите количество ингредиентов]
+- write ingredients
+[введите ингредиенты через Enter]
+ - choose sauces for custom pizza: Barbecue, Cheese, Sweet & Spicy, Ketchup,  Hot, Mayonnaise
+ - write number of sauces
+ [введите количество cоусов]
+ - write sauces
+[введите соусы через Enter]
