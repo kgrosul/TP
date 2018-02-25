@@ -55,6 +55,46 @@ void СHawaiianPizzaBuilder::cook(){ pizza->cook(800); }
 void СHawaiianPizzaBuilder::setPrice(){ pizza->setPrice(399); }
 
 
+void СCustomPizzaBuilder::chooseDough(){
+    std::cout << "choose dough for custom pizza:\n thick, medium or thin";
+    std::string dough;
+    std::cin >> dough;
+    pizza->setDough(dough);
+}
+void СCustomPizzaBuilder::addIngredients() {
+    std::cout << "choose ingredients for custom pizza:\n Chicken, Ham, Tomatoes, Cheese, Pineapples, Basil\n"<<
+            "Mozzarella, Emmental, Gorgonzola, Oregano, Olive oil, Onion, Wine, Mushrooms, Pumpkin" << std::endl;
+    std::cout << "write number of ingredients" << std::endl;
+    int number;
+    std::cin >> number;
+    std::cout << "write ingredients" << std::endl;
+    std::vector<std::string> ingredients;
+    for(int i = 0; i < number; ++i){
+        std::string ing;
+        std::cin >> ing;
+        ingredients.push_back(ing);
+    }
+    pizza->setIngredients(ingredients);
+}
+void СCustomPizzaBuilder::addSauces() {
+    std::cout << "choose sauces for custom pizza: Barbecue, Cheese, Sweet & Spicy, Ketchup,  Hot, Mayonnaise" <<
+              std::endl;
+    std::cout << "write number of sauces" << std::endl;
+    int number;
+    std::cin >> number;
+    std::cout << "write sauces" << std::endl;
+    std::vector<std::string> sauces;
+    for (int i = 0; i < number; ++i) {
+        std::string sc;
+        std::cin >> sc;
+        sauces.push_back(sc);
+    }
+    pizza->setSauces(sauces);
+}
+void СCustomPizzaBuilder::cook(){ pizza->cook(600); }
+void СCustomPizzaBuilder::setPrice(){ pizza->setPrice(999); }
+
+
 CChef::CChef(): pizzaBuilder(nullptr){}
 void CChef::setPizzaBuilder(IPizzaBuilder* builder){ pizzaBuilder = builder; }
 std::shared_ptr<CPizza> CChef::getPizza() { return pizzaBuilder->getPizza(); }

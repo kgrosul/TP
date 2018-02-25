@@ -74,6 +74,19 @@ public:
 
 };
 
+class СCustomPizzaBuilder: public  IPizzaBuilder{
+public:
+    СCustomPizzaBuilder(): IPizzaBuilder(){}
+    ~СCustomPizzaBuilder() {}
+    void chooseDough();
+    void addIngredients();
+    void addSauces();
+    void cook();
+    void setPrice();
+
+};
+
+
 class CChef{
     IPizzaBuilder* pizzaBuilder;
 public:
@@ -86,3 +99,5 @@ public:
 };
 
 #endif //PIZZA_PIZZA_H
+
+

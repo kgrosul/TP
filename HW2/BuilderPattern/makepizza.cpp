@@ -26,3 +26,12 @@ std::shared_ptr<CPizza> makeMargaritaPizza(){
     auto pizza = chef.getPizza();
     return pizza;
 }
+
+std::shared_ptr<CPizza> makeCustomPizza(){
+    CChef chef;
+    СCustomPizzaBuilder builder;
+    chef.setPizzaBuilder(&builder);
+    chef.createPizza();
+    auto pizza = chef.getPizza();
+    return pizza;
+}
